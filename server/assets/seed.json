@@ -1,4 +1,5 @@
 {
+  "iva_pct": 0.21,
   "parametros": {
     "vidrio_hoja_ancho_mm": 2500.0,
     "vidrio_hoja_alto_mm": 3600.0,
