@@ -20,7 +20,7 @@
     "aluminio_usd_kg": 9.2,
     "tipo_cambio_ars_usd": 1500.0,
     "armado_dvh_ars_m2": 5000.0,
-    "holgura_cavidad_mm_por_lado": 1.0
+    "holgura_cavidad_mm_por_lado": 1.0,
     "iva_pct": 0.21
   },
   "vidrios": [
