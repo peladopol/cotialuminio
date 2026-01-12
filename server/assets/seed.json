@@ -1,0 +1,1424 @@
+{
+  "parametros": {
+    "vidrio_hoja_ancho_mm": 2500.0,
+    "vidrio_hoja_alto_mm": 3600.0,
+    "aluminio_barra_mm": 6000.0,
+    "puerta_corrediza_alto_mm": 1800.0,
+    "min_ancho_CORREDIZA_2H": 500.0,
+    "min_alto_CORREDIZA_2H": 300.0,
+    "max_ancho_CORREDIZA_2H": 3000.0,
+    "max_alto_CORREDIZA_2H": 2200.0,
+    "min_ancho_PANO_FIJO": 200.0,
+    "min_alto_PANO_FIJO": 200.0,
+    "max_ancho_PANO_FIJO": 4000.0,
+    "max_alto_PANO_FIJO": 2500.0,
+    "min_ancho_VENTANA_ABRIR_1H": 300.0,
+    "min_alto_VENTANA_ABRIR_1H": 300.0,
+    "max_ancho_VENTANA_ABRIR_1H": 1200.0,
+    "max_alto_VENTANA_ABRIR_1H": 1800.0,
+    "peso_vidrio_kg_m2_mm": 2.5,
+    "aluminio_usd_kg": 9.2,
+    "tipo_cambio_ars_usd": 1500.0,
+    "armado_dvh_ars_m2": 5000.0,
+    "holgura_cavidad_mm_por_lado": 1.0
+  },
+  "vidrios": [
+    {
+      "ID": "VS_4",
+      "Tipo": "VS",
+      "Configuracion": "4mm",
+      "Espesor_total_mm": 4.0,
+      "Camara_mm": null,
+      "Cavidad_min_mm": 6.0,
+      "Precio_m2_ARS": 11242,
+      "Activo": "SI",
+      "Notas": "Vidrio simple incoloro 4mm"
+    },
+    {
+      "ID": "VS_5",
+      "Tipo": "VS",
+      "Configuracion": "5mm",
+      "Espesor_total_mm": 5.0,
+      "Camara_mm": null,
+      "Cavidad_min_mm": 7.0,
+      "Precio_m2_ARS": 14628,
+      "Activo": "SI",
+      "Notas": "Completar precio real 5mm"
+    },
+    {
+      "ID": "LAM_3_3",
+      "Tipo": "LAM",
+      "Configuracion": "3+3",
+      "Espesor_total_mm": 6.5,
+      "Camara_mm": null,
+      "Cavidad_min_mm": 8.5,
+      "Precio_m2_ARS": 32542,
+      "Activo": "SI",
+      "Notas": "Laminado 3+3 (6,5mm)"
+    },
+    {
+      "ID": "DVH_4_9_4",
+      "Tipo": "DVH",
+      "Configuracion": "4/9/4",
+      "Espesor_total_mm": 17.0,
+      "Camara_mm": 9.0,
+      "Cavidad_min_mm": 19.0,
+      "Precio_m2_ARS": 0,
+      "Activo": "SI",
+      "Notas": "Completar o usar componentes"
+    },
+    {
+      "ID": "DVH_4_12_4",
+      "Tipo": "DVH",
+      "Configuracion": "4/12/4",
+      "Espesor_total_mm": 20.0,
+      "Camara_mm": 12.0,
+      "Cavidad_min_mm": 22.0,
+      "Precio_m2_ARS": 0,
+      "Activo": "SI",
+      "Notas": "Completar"
+    },
+    {
+      "ID": "DVH_3_3_12_4",
+      "Tipo": "DVH",
+      "Configuracion": "3+3/12/4",
+      "Espesor_total_mm": 24.5,
+      "Camara_mm": 12.0,
+      "Cavidad_min_mm": 25.0,
+      "Precio_m2_ARS": 0,
+      "Activo": "SI",
+      "Notas": "Cavidad mínima 24,5mm"
+    },
+    {
+      "ID": "DVH_3_3_12_3_3",
+      "Tipo": "DVH",
+      "Configuracion": "3+3/12/3+3",
+      "Espesor_total_mm": 25.0,
+      "Camara_mm": 12.0,
+      "Cavidad_min_mm": 27.0,
+      "Precio_m2_ARS": 0,
+      "Activo": "SI",
+      "Notas": "Completar"
+    }
+  ],
+  "separador": [
+    {
+      "Ancho_mm": 9,
+      "Precio_ml_ARS": 2300,
+      "Sistema": "Warm edge + Hotmelt",
+      "Notas": null
+    },
+    {
+      "Ancho_mm": 12,
+      "Precio_ml_ARS": 2700,
+      "Sistema": "Warm edge + Hotmelt",
+      "Notas": null
+    }
+  ],
+  "mano_obra": [
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Etapa": "1",
+      "HH": 2,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Etapa": "3",
+      "HH": 1,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Etapa": "4",
+      "HH": 1,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Etapa": "1",
+      "HH": 0.5,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Etapa": "3",
+      "HH": 0.5,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Etapa": "4",
+      "HH": 0.5,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Etapa": "1",
+      "HH": 1,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Etapa": "3",
+      "HH": 0.5,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Etapa": "4",
+      "HH": 0.5,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "GENERAL",
+      "Etapa": "2",
+      "HH": 0.5,
+      "Costo_hora_ARS": 9000,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Etapa": "TJ",
+      "HH": "5 min/ml",
+      "Costo_hora_ARS": 9000,
+      "Notas": "Parametrizable en Parametros"
+    }
+  ],
+  "margenes": [
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Canal": "WEB",
+      "Forma_pago": "TRANSFERENCIA",
+      "Margen_pct": 50,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Canal": "MOSTRADOR",
+      "Forma_pago": "TRANSFERENCIA",
+      "Margen_pct": 50,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Canal": "WEB",
+      "Forma_pago": "TRANSFERENCIA",
+      "Margen_pct": 50,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Canal": "MOSTRADOR",
+      "Forma_pago": "TRANSFERENCIA",
+      "Margen_pct": 50,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Canal": "WEB",
+      "Forma_pago": "TRANSFERENCIA",
+      "Margen_pct": 50,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Canal": "MOSTRADOR",
+      "Forma_pago": "TRANSFERENCIA",
+      "Margen_pct": 50,
+      "Notas": null
+    }
+  ],
+  "ruedas": [
+    {
+      "Categoria": "CORREDIZA_2H",
+      "Peso_min_kg": 0.0,
+      "Peso_max_kg": 40,
+      "Codigo_accesorio": "R-40S",
+      "Precio_ARS": 2200,
+      "Notas": "2 ruedas por hoja"
+    },
+    {
+      "Categoria": "CORREDIZA_2H",
+      "Peso_min_kg": 40.0001,
+      "Peso_max_kg": 85,
+      "Codigo_accesorio": "R-40D",
+      "Precio_ARS": 3200,
+      "Notas": "2 ruedas por hoja"
+    },
+    {
+      "Categoria": "CORREDIZA_2H",
+      "Peso_min_kg": 85.0001,
+      "Peso_max_kg": 110,
+      "Codigo_accesorio": "R-40DA",
+      "Precio_ARS": 3800,
+      "Notas": "2 ruedas por hoja"
+    }
+  ],
+  "perfiles": [
+    {
+      "Codigo": 99209.0,
+      "Kg_m": 1.25
+    },
+    {
+      "Codigo": 99252.0,
+      "Kg_m": 1.223
+    },
+    {
+      "Codigo": 99229.0,
+      "Kg_m": 0.76
+    },
+    {
+      "Codigo": 99230.0,
+      "Kg_m": 0.21
+    },
+    {
+      "Codigo": 99233.0,
+      "Kg_m": 0.146
+    },
+    {
+      "Codigo": 99200.0,
+      "Kg_m": 1.193
+    },
+    {
+      "Codigo": 99201.0,
+      "Kg_m": 0.654
+    },
+    {
+      "Codigo": 99203.0,
+      "Kg_m": 0.632
+    },
+    {
+      "Codigo": 99207.0,
+      "Kg_m": 0.605
+    },
+    {
+      "Codigo": 99204.0,
+      "Kg_m": 0.667
+    },
+    {
+      "Codigo": 99248.0,
+      "Kg_m": 0.603
+    },
+    {
+      "Codigo": 99255.0,
+      "Kg_m": 0.424
+    },
+    {
+      "Codigo": 99206.0,
+      "Kg_m": 0.186
+    },
+    {
+      "Codigo": 99216.0,
+      "Kg_m": 0.728
+    },
+    {
+      "Codigo": 99228.0,
+      "Kg_m": 0.186
+    },
+    {
+      "Codigo": 99250.0,
+      "Kg_m": 0.573
+    },
+    {
+      "Codigo": 99235.0,
+      "Kg_m": 0.902
+    },
+    {
+      "Codigo": 99249.0,
+      "Kg_m": 0.642
+    }
+  ],
+  "bom": [
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Variante": "VS",
+      "Perfil": 99229,
+      "Descripcion": "Marco horizontal",
+      "Cantidad": 2,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Variante": "VS",
+      "Perfil": 99229,
+      "Descripcion": "Marco vertical",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Variante": "VS",
+      "Perfil": 99230,
+      "Descripcion": "Contravidrio horizontal VS",
+      "Cantidad": 2,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Variante": "VS",
+      "Perfil": 99230,
+      "Descripcion": "Contravidrio vertical VS",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Variante": "DVH",
+      "Perfil": 99229,
+      "Descripcion": "Marco horizontal",
+      "Cantidad": 2,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Variante": "DVH",
+      "Perfil": 99229,
+      "Descripcion": "Marco vertical",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Variante": "DVH",
+      "Perfil": 99233,
+      "Descripcion": "Contravidrio horizontal DVH",
+      "Cantidad": 2,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Variante": "DVH",
+      "Perfil": 99233,
+      "Descripcion": "Contravidrio vertical DVH",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "VS",
+      "Perfil": 99200,
+      "Descripcion": "Marco dintel",
+      "Cantidad": 1,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": -42
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "VS",
+      "Perfil": 99204,
+      "Descripcion": "Zócalo ventana VS",
+      "Cantidad": 1,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": -25
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "VS",
+      "Perfil": 99201,
+      "Descripcion": "Marco jambas",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "VS",
+      "Perfil": 99203,
+      "Descripcion": "Parante lateral VS",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": -79
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "VS",
+      "Perfil": 99207,
+      "Descripcion": "Parante central VS",
+      "Cantidad": 1,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": -79
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "DVH",
+      "Perfil": 99200,
+      "Descripcion": "Marco dintel",
+      "Cantidad": 1,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": -42
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "DVH",
+      "Perfil": 99249,
+      "Descripcion": "Zócalo ventana DVH",
+      "Cantidad": 1,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": -25
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "DVH",
+      "Perfil": 99201,
+      "Descripcion": "Marco jambas",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "DVH",
+      "Perfil": 99248,
+      "Descripcion": "Parante lateral DVH",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": -79
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Variante": "DVH",
+      "Perfil": 99250,
+      "Descripcion": "Parante central DVH",
+      "Cantidad": 1,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": -79
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Variante": "VS",
+      "Perfil": 99216,
+      "Descripcion": "Marco doble contacto horizontal",
+      "Cantidad": 2,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Variante": "VS",
+      "Perfil": 99216,
+      "Descripcion": "Marco doble contacto vertical",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Variante": "VS",
+      "Perfil": 99235,
+      "Descripcion": "Hoja curva horizontal",
+      "Cantidad": 2,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": -39
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Variante": "VS",
+      "Perfil": 99235,
+      "Descripcion": "Hoja curva vertical",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": -39
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Variante": "DVH",
+      "Perfil": 99216,
+      "Descripcion": "Marco doble contacto horizontal",
+      "Cantidad": 2,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Variante": "DVH",
+      "Perfil": 99216,
+      "Descripcion": "Marco doble contacto vertical",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": 0
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Variante": "DVH",
+      "Perfil": 99235,
+      "Descripcion": "Hoja curva horizontal",
+      "Cantidad": 2,
+      "CoefA": 1,
+      "CoefH": 0,
+      "Const_mm": -39
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Variante": "DVH",
+      "Perfil": 99235,
+      "Descripcion": "Hoja curva vertical",
+      "Cantidad": 2,
+      "CoefA": 0,
+      "CoefH": 1,
+      "Const_mm": -39
+    }
+  ],
+  "accesorios_catalogo": [
+    {
+      "Codigo": "R-40S",
+      "Descripcion": "Rueda regulable simple rulemán (PAR)",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 2200
+    },
+    {
+      "Codigo": "R-40D",
+      "Descripcion": "Rueda regulable doble rulemán (PAR)",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 3250
+    },
+    {
+      "Codigo": "R-40DA",
+      "Descripcion": "Rueda alta carga (PAR)",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 3800
+    },
+    {
+      "Codigo": "H-054",
+      "Descripcion": "Cierre lateral automático",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 4740
+    },
+    {
+      "Codigo": "T-089",
+      "Descripcion": "Tope guía parante lateral",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 75
+    },
+    {
+      "Codigo": "T-090",
+      "Descripcion": "Tope guía parante central",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 168
+    },
+    {
+      "Codigo": "T-095",
+      "Descripcion": "Tapa cabeza tornillo",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 30
+    },
+    {
+      "Codigo": "T-091",
+      "Descripcion": "Tapón lateral condensación",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 92
+    },
+    {
+      "Codigo": "T-092",
+      "Descripcion": "Junta estanqueidad marco 2 guías",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 142
+    },
+    {
+      "Codigo": "B-030",
+      "Descripcion": "Burlete cuña 2,5 mm",
+      "Unidad": "ml",
+      "Precio_ARS_sin_IVA": 382
+    },
+    {
+      "Codigo": "B-031",
+      "Descripcion": "Burlete cuña 4,5 mm",
+      "Unidad": "ml",
+      "Precio_ARS_sin_IVA": 645
+    },
+    {
+      "Codigo": "B-069",
+      "Descripcion": "Burlete marco–premarco",
+      "Unidad": "ml",
+      "Precio_ARS_sin_IVA": 346
+    },
+    {
+      "Codigo": "FE004",
+      "Descripcion": "Felpa 7x5",
+      "Unidad": "ml",
+      "Precio_ARS_sin_IVA": 185
+    },
+    {
+      "Codigo": "RO0006",
+      "Descripcion": "Rueda mosquitero con rulemán",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 921
+    },
+    {
+      "Codigo": "B-070",
+      "Descripcion": "Burlete tope mosquitero",
+      "Unidad": "ml",
+      "Precio_ARS_sin_IVA": 800
+    },
+    {
+      "Codigo": "CU001",
+      "Descripcion": "Cuerda para mosquitero",
+      "Unidad": "ml",
+      "Precio_ARS_sin_IVA": 150
+    },
+    {
+      "Codigo": "E-069",
+      "Descripcion": "Escuadra para marco",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 1378
+    },
+    {
+      "Codigo": "T-069",
+      "Descripcion": "Tapa desagüe",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 232
+    },
+    {
+      "Codigo": "H-039",
+      "Descripcion": "Bisagra 2 cuerpos",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 8199
+    },
+    {
+      "Codigo": "H-043",
+      "Descripcion": "Traba varilla terminal",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 1177
+    },
+    {
+      "Codigo": "H-079",
+      "Descripcion": "Terminal varilla",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 1177
+    },
+    {
+      "Codigo": "99206",
+      "Descripcion": "Perfil tapajunta",
+      "Unidad": "ml",
+      "Precio_ARS_sin_IVA": 2738
+    },
+    {
+      "Codigo": "T-087",
+      "Descripcion": "Clip tapajunta",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 90
+    },
+    {
+      "Codigo": "B-057",
+      "Descripcion": "Burlete tapajunta",
+      "Unidad": "ml",
+      "Precio_ARS_sin_IVA": 370
+    },
+    {
+      "Codigo": "E-066",
+      "Descripcion": "Escuadra alineación tapajunta",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 65
+    },
+    {
+      "Codigo": "T-096",
+      "Descripcion": "Clip tapajunta",
+      "Unidad": "u",
+      "Precio_ARS_sin_IVA": 50
+    }
+  ],
+  "accesorios_x_tipologia": [
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "R-40S",
+      "Regla": "segun_peso_hoja",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": "Precio unitario por RUEDA. El sistema multiplica automáticamente."
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "R-40D",
+      "Regla": "segun_peso_hoja",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": "Precio unitario por RUEDA. El sistema multiplica automáticamente."
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "R-40DA",
+      "Regla": "segun_peso_hoja",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": "Precio unitario por RUEDA. El sistema multiplica automáticamente."
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "H-054",
+      "Regla": "por_abertura",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "T-089",
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "T-090",
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "T-095",
+      "Regla": "por_abertura",
+      "Cantidad_Base": 8.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "T-091",
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "T-092",
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "B-030",
+      "Regla": "perimetro_hojas_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "B-031",
+      "Regla": "perimetro_hojas_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "B-069",
+      "Regla": "perimetro_abertura_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "FE004",
+      "Regla": "felpa_fe004_ml",
+      "Cantidad_Base": 1.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "RO0006",
+      "Regla": "por_mosq_hoja",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": "2 ruedas por hoja de mosquitero (1 hoja)"
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "B-070",
+      "Regla": "mosq_tope_alto_x2_ml",
+      "Cantidad_Base": 1.0,
+      "Cada_mm": null,
+      "Notas": "Solo alto*2, no perímetro."
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Condicion": null,
+      "Codigo": "CU001",
+      "Regla": "por_perimetro_hoja_ml",
+      "Cantidad_Base": 1.0,
+      "Cada_mm": null,
+      "Notas": "Perímetro de 1 hoja de mosquitero"
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Condicion": null,
+      "Codigo": "B-069",
+      "Regla": "perimetro_abertura_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Condicion": null,
+      "Codigo": "E-069",
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Condicion": null,
+      "Codigo": "T-069",
+      "Regla": "por_abertura",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Condicion": null,
+      "Codigo": "H-039",
+      "Regla": "segun_area",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Condicion": null,
+      "Codigo": "H-043",
+      "Regla": "por_hoja",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Condicion": null,
+      "Codigo": "H-079",
+      "Regla": "por_hoja",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Condicion": null,
+      "Codigo": "99206",
+      "Regla": "ml_tapajunta",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": "El aluminio del tapajunta se costea por kg/m del perfil 99206."
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Condicion": null,
+      "Codigo": "T-087",
+      "Regla": "cada_500mm_mas_puntas",
+      "Cantidad_Base": null,
+      "Cada_mm": 500.0,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Condicion": null,
+      "Codigo": "B-057",
+      "Regla": "ml_tapajunta",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Condicion": null,
+      "Codigo": "E-066",
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": "Ventana=4 (esquinas). Puerta corrediza=2 (sin inferior)."
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Condicion": null,
+      "Codigo": "T-096",
+      "Regla": "clips_tapajunta",
+      "Cantidad_Base": 1.0,
+      "Cada_mm": null,
+      "Notas": "A 250mm de extremos y luego cada 500mm. Puerta: solo laterales+superior."
+    },
+    {
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Condicion": null,
+      "Codigo": "B-069",
+      "Regla": "perimetro_abertura_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    }
+  ],
+  "accesorios_legacy": [
+    {
+      "Codigo": "R-40S",
+      "Descripcion": "Rueda regulable simple rulemán (PAR)",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 2200,
+      "Regla": "segun_peso_hoja",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": "Precio unitario por RUEDA. El sistema multiplica automáticamente."
+    },
+    {
+      "Codigo": "R-40D",
+      "Descripcion": "Rueda regulable doble rulemán (PAR)",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 3250,
+      "Regla": "segun_peso_hoja",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": "Precio unitario por RUEDA. El sistema multiplica automáticamente."
+    },
+    {
+      "Codigo": "R-40DA",
+      "Descripcion": "Rueda alta carga (PAR)",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 3800,
+      "Regla": "segun_peso_hoja",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": "Precio unitario por RUEDA. El sistema multiplica automáticamente."
+    },
+    {
+      "Codigo": "H-054",
+      "Descripcion": "Cierre lateral automático",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 4740,
+      "Regla": "por_abertura",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "T-089",
+      "Descripcion": "Tope guía parante lateral",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 75,
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "T-090",
+      "Descripcion": "Tope guía parante central",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 168,
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "T-095",
+      "Descripcion": "Tapa cabeza tornillo",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 30,
+      "Regla": "por_abertura",
+      "Cantidad_Base": 8.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "T-091",
+      "Descripcion": "Tapón lateral condensación",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 92,
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "T-092",
+      "Descripcion": "Junta estanqueidad marco 2 guías",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 142,
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "B-030",
+      "Descripcion": "Burlete cuña 2,5 mm",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "ml",
+      "Precio_ARS": 382,
+      "Regla": "perimetro_hojas_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "B-031",
+      "Descripcion": "Burlete cuña 4,5 mm",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "ml",
+      "Precio_ARS": 645,
+      "Regla": "perimetro_hojas_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "B-069",
+      "Descripcion": "Burlete marco–premarco",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "ml",
+      "Precio_ARS": 346,
+      "Regla": "perimetro_abertura_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "FE004",
+      "Descripcion": "Felpa 7x5",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "ml",
+      "Precio_ARS": 185,
+      "Regla": "felpa_fe004_ml",
+      "Cantidad_Base": 1.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "RO0006",
+      "Descripcion": "Rueda mosquitero con rulemán",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "u",
+      "Precio_ARS": 921,
+      "Regla": "por_mosq_hoja",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": "2 ruedas por hoja de mosquitero (1 hoja)"
+    },
+    {
+      "Codigo": "B-070",
+      "Descripcion": "Burlete tope mosquitero",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "ml",
+      "Precio_ARS": 800,
+      "Regla": "mosq_tope_alto_x2_ml",
+      "Cantidad_Base": 1.0,
+      "Cada_mm": null,
+      "Notas": "Solo alto*2, no perímetro."
+    },
+    {
+      "Codigo": "CU001",
+      "Descripcion": "Cuerda para mosquitero",
+      "Linea": "CLASICA",
+      "Tipologia": "CORREDIZA_2H",
+      "Unidad": "ml",
+      "Precio_ARS": 150,
+      "Regla": "por_perimetro_hoja_ml",
+      "Cantidad_Base": 1.0,
+      "Cada_mm": null,
+      "Notas": "Perímetro de 1 hoja de mosquitero"
+    },
+    {
+      "Codigo": "B-069",
+      "Descripcion": "Burlete marco–premarco",
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Unidad": "ml",
+      "Precio_ARS": 346,
+      "Regla": "perimetro_abertura_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "E-069",
+      "Descripcion": "Escuadra para marco",
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Unidad": "u",
+      "Precio_ARS": 1378,
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "T-069",
+      "Descripcion": "Tapa desagüe",
+      "Linea": "CLASICA",
+      "Tipologia": "PANO_FIJO",
+      "Unidad": "u",
+      "Precio_ARS": 232,
+      "Regla": "por_abertura",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "H-039",
+      "Descripcion": "Bisagra 2 cuerpos",
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Unidad": "u",
+      "Precio_ARS": 8199,
+      "Regla": "segun_area",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "H-043",
+      "Descripcion": "Traba varilla terminal",
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Unidad": "u",
+      "Precio_ARS": 1177,
+      "Regla": "por_hoja",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "H-079",
+      "Descripcion": "Terminal varilla",
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Unidad": "u",
+      "Precio_ARS": 1177,
+      "Regla": "por_hoja",
+      "Cantidad_Base": 2.0,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "99206",
+      "Descripcion": "Perfil tapajunta",
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Unidad": "ml",
+      "Precio_ARS": 2738,
+      "Regla": "ml_tapajunta",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": "El aluminio del tapajunta se costea por kg/m del perfil 99206."
+    },
+    {
+      "Codigo": "T-087",
+      "Descripcion": "Clip tapajunta",
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Unidad": "u",
+      "Precio_ARS": 90,
+      "Regla": "cada_500mm_mas_puntas",
+      "Cantidad_Base": null,
+      "Cada_mm": 500.0,
+      "Notas": null
+    },
+    {
+      "Codigo": "B-057",
+      "Descripcion": "Burlete tapajunta",
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Unidad": "ml",
+      "Precio_ARS": 370,
+      "Regla": "ml_tapajunta",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    },
+    {
+      "Codigo": "E-066",
+      "Descripcion": "Escuadra alineación tapajunta",
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Unidad": "u",
+      "Precio_ARS": 65,
+      "Regla": "por_abertura",
+      "Cantidad_Base": 4.0,
+      "Cada_mm": null,
+      "Notas": "Ventana=4 (esquinas). Puerta corrediza=2 (sin inferior)."
+    },
+    {
+      "Codigo": "T-096",
+      "Descripcion": "Clip tapajunta",
+      "Linea": "CLASICA",
+      "Tipologia": "TAPAJUNTA",
+      "Unidad": "u",
+      "Precio_ARS": 50,
+      "Regla": "clips_tapajunta",
+      "Cantidad_Base": 1.0,
+      "Cada_mm": null,
+      "Notas": "A 250mm de extremos y luego cada 500mm. Puerta: solo laterales+superior."
+    },
+    {
+      "Codigo": "B-069",
+      "Descripcion": "Burlete marco–premarco",
+      "Linea": "CLASICA",
+      "Tipologia": "VENTANA_ABRIR_1H",
+      "Unidad": "ml",
+      "Precio_ARS": 346,
+      "Regla": "perimetro_abertura_ml",
+      "Cantidad_Base": null,
+      "Cada_mm": null,
+      "Notas": null
+    }
+  ]
+}

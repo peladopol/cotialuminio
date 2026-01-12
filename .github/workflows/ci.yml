@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Server - install
+        working-directory: server
+        run: npm ci
+
+      - name: Server - seed validate & export
+        working-directory: server
+        run: npm run seed:sync
+
+      - name: Server - build
+        working-directory: server
+        run: npm run build
+
+      - name: Widget - install
+        working-directory: widget
+        run: npm ci
+
+      - name: Widget - build
+        working-directory: widget
+        run: npm run build
