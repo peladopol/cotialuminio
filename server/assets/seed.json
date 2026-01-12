@@ -1,4 +1,10 @@
 {
-  "iva_pct": 0.21,
-  "parametros": {}
+  "parametros": {
+    "iva_pct": 0.21,
+    "tipo_cambio_ars_usd": 1500,
+    "aluminio_usd_kg": 9.2,
+    "armado_dvh_ars_m2": 5000,
+    "peso_vidrio_kg_m2_mm": 2.5,
+    "holgura_cavidad_mm_por_lado": 1
+  }
 }
