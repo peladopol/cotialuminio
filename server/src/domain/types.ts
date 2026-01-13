@@ -32,11 +32,22 @@ export interface QuoteOutputAdmin extends QuoteOutputCliente {
   desglose: {
     aluminio_ars: number;
     accesorios_ars: number;
-    accesorios_detalle?: Array<{ codigo: string; descripcion: string; unidad: string; regla: string; precio_unit_ars: number; cantidad: number; subtotal_ars: number; notas?: string }>;
+    accesorios_detalle?: Array<{
+      codigo: string;
+      descripcion: string;
+      unidad: string;
+      regla: string;
+      precio_unit_ars: number;
+      cantidad: number;
+      subtotal_ars: number;
+      notas?: string;
+    }>;
     vidrio_ars: number;
     separador_ars: number;
     mano_obra_ars: number;
     tapajunta_ars: number;
+    tapajunta_detalle?: any;
+    vidrio_piezas_mm?: any;
     flete_ars: number;
     costo_materiales_y_mo_sin_iva: number;
     margen_ars: number;
@@ -46,9 +57,24 @@ export interface QuoteOutputAdmin extends QuoteOutputCliente {
   meta: {
     kg_aluminio_total: number;
     area_m2: number;
-    vidrio_piezas?: Array<{ label: string; ancho_mm: number; alto_mm: number; area_m2: number }>;
+    vidrio_piezas?: Array<{
+      label: string;
+      ancho_mm: number;
+      alto_mm: number;
+      area_m2: number;
+    }>;
     perimetro_ml: number;
     tapajunta_ml: number;
     peso_hoja_vidrio_kg?: number;
+  };
+
+  /**
+   * Detalle extendido de cálculo (solo admin).
+   * Útil para auditoría/depuración del cotizador.
+   */
+  detalles?: {
+    accesorios?: any;
+    tapajunta?: any;
+    vidrio_piezas_mm?: any;
   };
 }
