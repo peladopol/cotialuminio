@@ -211,7 +211,7 @@ function kgAluminio(db, i) {
     const items = db.bom.filter((x) => x.linea === i.linea &&
         x.tipologia === i.tipologia &&
         x.variante === i.variante);
-    if (!items.length)
+    if (!itemsAcc.length)
         throw new Error(`BOM vacío para ${i.linea}/${i.tipologia}/${i.variante}`);
     let total = 0;
     for (const it of items) {
@@ -221,15 +221,19 @@ function kgAluminio(db, i) {
     return total;
 }
 function calcAcc(db, a, meta) {
-    const cantidadBase = Number(a.cantidad_base ?? 1);
-    // Ruedas: el precio depende del peso de hoja
+    const cantidadBase = Number(a.cantidad_base ?? 1); // Ruedas: elegir 1 código según peso de hoja y multiplicar por (ruedas por hoja * hojas)
     if (a.regla === "segun_peso" || a.regla === "segun_peso_hoja") {
         if (meta.peso_hoja_vidrio_kg == null)
             return { subtotal: 0, cantidad: 0 };
-        const r = db.ruedas.find((x) => meta.peso_hoja_vidrio_kg >= x.peso_min_kg &&
+        const categoria = meta.tipologia ?? "";
+        const r = db.ruedas.find((x) => (!x.categoria || x.categoria === categoria) &&
+            meta.peso_hoja_vidrio_kg >= x.peso_min_kg &&
             meta.peso_hoja_vidrio_kg < x.peso_max_kg);
+        // por defecto: 2 ruedas por hoja
+        const ruedasPorHoja = meta.ruedas_por_hoja ?? 2;
+        const cant = cantidadBase * meta.hojas * ruedasPorHoja;
         const unit = r?.precio_ars ?? a.precio_ars;
-        return { subtotal: unit * cantidadBase, cantidad: cantidadBase };
+        return { subtotal: unit * cant, cantidad: cant };
     }
     if (a.regla === "por_abertura")
         return { subtotal: a.precio_ars * cantidadBase, cantidad: cantidadBase };
@@ -300,16 +304,41 @@ function calcAcc(db, a, meta) {
         const cant = cantidadBase * cantPieces;
         return { subtotal: a.precio_ars * cant, cantidad: cant };
     }
+    // Fórmula específica (por ahora, solo FE004)
+    if (a.regla === "formula_personalizada") {
+        const notas = String(a.notas || "");
+        const mA = Number(notas.match(/Ancho\s+por\s+(\d+)/i)?.[1] || 0);
+        const mH = Number(notas.match(/alto\s+por\s+(\d+)/i)?.[1] || 0);
+        if (mA > 0 || mH > 0) {
+            const ml = (meta.ancho_mm * mA + meta.alto_mm * mH) / 1000;
+            const cant = cantidadBase * ml;
+            return { subtotal: a.precio_ars * cant, cantidad: cant };
+        }
+    }
     // Regla no reconocida => 0 para no contaminar
     return { subtotal: 0, cantidad: 0 };
 }
 function calcAccesorios(db, i, meta) {
-    const base = db.accesorios.filter((a) => a.linea === "CLASICA" && a.tipologia === i.tipologia);
+    const linea = meta.linea ?? i.linea ?? "CLASICA";
+    const base = db.accesorios.filter((a) => a.linea === linea && a.tipologia === i.tipologia);
+    // Si hay accesorios con regla "segun_peso_hoja" (ruedas), dejá solo el código que corresponde al peso
+    const pesoHoja = meta.peso_hoja_vidrio_kg ?? 0;
+    const ruedaMatch = db.ruedas.find((r) => (!r.categoria || r.categoria === i.tipologia) &&
+        pesoHoja >= r.peso_min_kg &&
+        pesoHoja < r.peso_max_kg);
+    let itemsAcc = base;
+    if (ruedaMatch) {
+        const tieneRuedas = itemsAcc.some((a) => a.regla === "segun_peso_hoja" || a.regla === "segun_peso");
+        if (tieneRuedas) {
+            itemsAcc = itemsAcc.filter((a) => !(a.regla === "segun_peso_hoja" || a.regla === "segun_peso") ||
+                a.codigo === ruedaMatch.codigo_accesorio);
+        }
+    }
     // Condicionales globales
     // OJO: el tapajunta completo (aluminio + burlete + escuadras + clips + MO) se calcula en tapajuntaCosto().
     // Acá solo sumamos accesorios propios de la tipología y (si aplica) mosquitero.
     const mosq = i.mosquitero
-        ? db.accesorios.filter((a) => a.tipologia === "MOSQUITEROS")
+        ? db.accesorios.filter((a) => a.linea === linea && a.tipologia === "MOSQUITEROS")
         : [];
     // Algunos accesorios de mosquitero están embebidos en CORREDIZA_2H con notas "MOSQ"
     const baseFiltrado = base.filter((a) => {
@@ -318,8 +347,8 @@ function calcAccesorios(db, i, meta) {
             return false;
         return true;
     });
-    const items = [...baseFiltrado, ...mosq];
-    const lines = items
+    const itemsAll = [...baseFiltrado, ...mosq];
+    const lines = itemsAll
         .map((a) => {
         const metaLocal = a.tipologia === "MOSQUITEROS" ? { ...meta, hojas: 1 } : meta;
         const r = calcAcc(db, a, metaLocal);
@@ -570,16 +599,6 @@ export function cotizar(db, i) {
         desglose: {
             aluminio_ars: round2(aluminio_ars),
             accesorios_ars: round2(accesorios_ars),
-            accesorios_detalle: accDet.lines.map((l) => ({
-                codigo: l.codigo,
-                descripcion: l.descripcion,
-                unidad: l.unidad,
-                regla: l.regla,
-                precio_unit_ars: round2(l.precio_unit_ars),
-                cantidad: round2(l.cantidad),
-                subtotal_ars: round2(l.subtotal_ars),
-                notas: l.notas,
-            })),
             vidrio_ars: round2(vidrio_ars),
             separador_ars: round2(separador_ars),
             mano_obra_ars: round2(mano_obra_ars),
@@ -589,28 +608,6 @@ export function cotizar(db, i) {
             margen_ars: round2(margen_ars),
             subtotal_sin_iva: round2(subtotal),
             iva_ars: round2(iva_ars),
-        },
-        detalles: {
-            accesorios: accDet.lines.map((l) => ({
-                codigo: l.codigo,
-                descripcion: l.descripcion,
-                unidad: l.unidad,
-                regla: l.regla,
-                precio_unit_ars: round2(l.precio_unit_ars),
-                cantidad: round2(l.cantidad),
-                subtotal_ars: round2(l.subtotal_ars),
-                notas: l.notas,
-            })),
-            tapajunta: tapDet.lines.map((l) => ({
-                codigo: l.codigo,
-                descripcion: l.descripcion,
-                unidad: l.unidad,
-                precio_unit_ars: round2(l.unitario_ars),
-                cantidad: round2(l.cantidad),
-                subtotal_ars: round2(l.subtotal_ars),
-                notas: l.notas,
-            })),
-            vidrio_piezas_mm: vidrioPiecesMm(db, i),
         },
         meta: {
             kg_aluminio_total: round2(kg_al),
