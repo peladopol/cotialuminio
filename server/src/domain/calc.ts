@@ -279,7 +279,7 @@ function kgAluminio(db: CostDB, i: QuoteInput): number {
       x.tipologia === i.tipologia &&
       x.variante === i.variante
   );
-  if (!itemsAcc.length)
+  if (!items.length)
     throw new Error(`BOM vacío para ${i.linea}/${i.tipologia}/${i.variante}`);
 
   let total = 0;
@@ -304,25 +304,25 @@ function calcAcc(
     alto_mm: number;
   }
 ): { subtotal: number; cantidad: number } {
-  const cantidadBase = Number(a.cantidad_base ?? 1);// Ruedas: elegir 1 código según peso de hoja y multiplicar por (ruedas por hoja * hojas)
-if (a.regla === "segun_peso" || a.regla === "segun_peso_hoja") {
-  if (meta.peso_hoja_vidrio_kg == null) return { subtotal: 0, cantidad: 0 };
+  const cantidadBase = Number(a.cantidad_base ?? 1); // Ruedas: elegir 1 código según peso de hoja y multiplicar por (ruedas por hoja * hojas)
+  if (a.regla === "segun_peso" || a.regla === "segun_peso_hoja") {
+    if (meta.peso_hoja_vidrio_kg == null) return { subtotal: 0, cantidad: 0 };
 
-  const categoria = (meta as any).tipologia ?? "";
-  const r = db.ruedas.find(
-    (x) =>
-      (!x.categoria || x.categoria === categoria) &&
-      meta.peso_hoja_vidrio_kg! >= x.peso_min_kg &&
-      meta.peso_hoja_vidrio_kg! < x.peso_max_kg
-  );
+    const categoria = (meta as any).tipologia ?? "";
+    const r = db.ruedas.find(
+      (x) =>
+        (!x.categoria || x.categoria === categoria) &&
+        meta.peso_hoja_vidrio_kg! >= x.peso_min_kg &&
+        meta.peso_hoja_vidrio_kg! < x.peso_max_kg
+    );
 
-  // por defecto: 2 ruedas por hoja
-  const ruedasPorHoja = (meta as any).ruedas_por_hoja ?? 2;
-  const cant = cantidadBase * meta.hojas * ruedasPorHoja;
+    // por defecto: 2 ruedas por hoja
+    const ruedasPorHoja = (meta as any).ruedas_por_hoja ?? 2;
+    const cant = cantidadBase * meta.hojas * ruedasPorHoja;
 
-  const unit = r?.precio_ars ?? a.precio_ars;
-  return { subtotal: unit * cant, cantidad: cant };
-}
+    const unit = r?.precio_ars ?? a.precio_ars;
+    return { subtotal: unit * cant, cantidad: cant };
+  }
 
   if (a.regla === "por_abertura")
     return { subtotal: a.precio_ars * cantidadBase, cantidad: cantidadBase };
@@ -435,32 +435,35 @@ function calcAccesorios(
   const base = db.accesorios.filter(
     (a) => a.linea === linea && a.tipologia === i.tipologia
   );
-// Si hay accesorios con regla "segun_peso_hoja" (ruedas), dejá solo el código que corresponde al peso
-const pesoHoja = meta.peso_hoja_vidrio_kg ?? 0;
-const ruedaMatch = db.ruedas.find(
-  (r) =>
-    (!r.categoria || r.categoria === i.tipologia) &&
-    pesoHoja >= r.peso_min_kg &&
-    pesoHoja < r.peso_max_kg
-);
-let itemsAcc = base;
-if (ruedaMatch) {
-  const tieneRuedas = itemsAcc.some((a) => a.regla === "segun_peso_hoja" || a.regla === "segun_peso");
-  if (tieneRuedas) {
-    itemsAcc = itemsAcc.filter(
-      (a) =>
-        !(a.regla === "segun_peso_hoja" || a.regla === "segun_peso") ||
-        a.codigo === ruedaMatch.codigo_accesorio
+  // Si hay accesorios con regla "segun_peso_hoja" (ruedas), dejá solo el código que corresponde al peso
+  const pesoHoja = meta.peso_hoja_vidrio_kg ?? 0;
+  const ruedaMatch = db.ruedas.find(
+    (r) =>
+      (!r.categoria || r.categoria === i.tipologia) &&
+      pesoHoja >= r.peso_min_kg &&
+      pesoHoja < r.peso_max_kg
+  );
+  let itemsAcc = base;
+  if (ruedaMatch) {
+    const tieneRuedas = itemsAcc.some(
+      (a) => a.regla === "segun_peso_hoja" || a.regla === "segun_peso"
     );
+    if (tieneRuedas) {
+      itemsAcc = itemsAcc.filter(
+        (a) =>
+          !(a.regla === "segun_peso_hoja" || a.regla === "segun_peso") ||
+          a.codigo === ruedaMatch.codigo_accesorio
+      );
+    }
   }
-}
-
 
   // Condicionales globales
   // OJO: el tapajunta completo (aluminio + burlete + escuadras + clips + MO) se calcula en tapajuntaCosto().
   // Acá solo sumamos accesorios propios de la tipología y (si aplica) mosquitero.
   const mosq = (i as any).mosquitero
-    ? db.accesorios.filter((a) => a.linea === linea && a.tipologia === "MOSQUITEROS")
+    ? db.accesorios.filter(
+        (a) => a.linea === linea && a.tipologia === "MOSQUITEROS"
+      )
     : [];
 
   // Algunos accesorios de mosquitero están embebidos en CORREDIZA_2H con notas "MOSQ"

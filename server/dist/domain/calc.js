@@ -211,7 +211,7 @@ function kgAluminio(db, i) {
     const items = db.bom.filter((x) => x.linea === i.linea &&
         x.tipologia === i.tipologia &&
         x.variante === i.variante);
-    if (!itemsAcc.length)
+    if (!items.length)
         throw new Error(`BOM vacío para ${i.linea}/${i.tipologia}/${i.variante}`);
     let total = 0;
     for (const it of items) {
